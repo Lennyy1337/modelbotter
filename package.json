@@ -1,0 +1,14 @@
+{
+	"scripts": {
+		"dev": "tsx --expose-gc --max-old-space-size=16384  ./index.ts",
+		"build": "tsc",
+		"start": "node --expose-gc --max-old-space-size=16384 ./dist/index.js"
+	},
+	"dependencies": {
+		"@types/node": "^22.10.2",
+		"axios": "^1.7.9",
+		"fs": "0.0.1-security",
+		"noblox.js": "^6.0.2",
+		"rbxm-parser": "^1.1.0"
+	}
+}
