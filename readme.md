@@ -19,7 +19,7 @@ npm i -g pnpm
 
 ```sh
 pnpm i
-pnpm i -g tsx
+pnpm i -g tsx typescript
 ```
 
 ### Build
