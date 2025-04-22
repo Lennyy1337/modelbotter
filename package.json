@@ -10,5 +10,11 @@
 		"fs": "0.0.1-security",
 		"noblox.js": "^6.0.2",
 		"rbxm-parser": "^1.1.0"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"lz4",
+			"noblox.js"
+		]
 	}
 }

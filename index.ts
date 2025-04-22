@@ -33,12 +33,17 @@ async function searchModels(keyword: string, cursor?: string): Promise<any> {
   }
 }
 
-async function downloadModel(modelId: number): Promise<Buffer | null> {
+async function downloadModel(modelId: number, cookie: string): Promise<Buffer | null> {
   try {
     const response = await axios.get(
       `https://assetdelivery.roblox.com/v1/asset/?id=${modelId}`,
       {
         responseType: "arraybuffer",
+        headers: {
+          Cookie: cookie,
+          "Content-Type": "application/json",
+          "X-CSRF-TOKEN": await noblox.getGeneralToken(),
+        }
       }
     );
     return Buffer.from(response.data);
@@ -162,7 +167,7 @@ async function processModel(
 ) {
   try {
     const originalInfo: any = await getModelDetails(model.id);
-    const modelData = await downloadModel(model.id);
+    const modelData = await downloadModel(model.id, cookie);
     if (!modelData) return;
 
     const file = RobloxFile.ReadFromBuffer(modelData);
