@@ -40,19 +40,19 @@ async function downloadModel(modelId: number, cookie: string): Promise<Buffer | 
       {
         responseType: "arraybuffer",
         headers: {
-          Cookie: cookie,
+          Cookie: `.ROBLOSECURITY=${cookie}`,
           "Content-Type": "application/json",
-          "X-CSRF-TOKEN": await noblox.getGeneralToken(),
         }
       }
     );
     return Buffer.from(response.data);
   } catch (error) {
     stats.errors++;
-    console.log("[ERROR] Failed to download model: ", error);
+    console.log("[ERROR] Failed to download model:", error);
     return null;
   }
 }
+
 
 function modifyScript(
   file: RobloxFile,
