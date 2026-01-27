@@ -46,3 +46,5 @@ This enables live refresh for development purposes.
 
 This is just something I made in a small amount of time, expect bugs, glitches and crashes.
 If you want to contribute, make a pull request.
+
+*I do not anymore provide assistance for this project as it is outdated and no longer supported*
